@@ -17,27 +17,29 @@
         }
 
         :root {
-            --primary: #1D4ED8;
-            --primary-dark: #13379C;
-            --primary-light: #E8EEFF;
-            --secondary: #455A73;
+            --primary: #FF7A00;
+            --primary-dark: #E85C00;
+            --primary-light: #FFF3E6;
+            --primary-rgb: 255, 122, 0;
+            --primary-dark-rgb: 232, 92, 0;
+            --secondary: #4A5568;
             --surface: #FFFFFF;
-            --surface-alt: #F3F6FB;
-            --background: #EEF2F9;
-            --border: #D5DEEB;
-            --text: #0F172A;
-            --text-secondary: #475569;
+            --surface-alt: #FFF8F1;
+            --background: #FFF5EB;
+            --border: #FFE0C2;
+            --text: #1F2933;
+            --text-secondary: #52606D;
             --success: #0F9D58;
             --warning: #F59E0B;
             --error: #DC2626;
-            --shadow: rgba(15, 23, 42, 0.12);
+            --shadow: rgba(17, 24, 39, 0.12);
         }
 
         body {
             font-family: 'Inter', 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.7;
             color: var(--text);
-            background: radial-gradient(120% 120% at 10% 10%, rgba(29, 78, 216, 0.08) 0%, rgba(29, 78, 216, 0) 60%), var(--background);
+            background: radial-gradient(120% 120% at 10% 10%, rgba(var(--primary-rgb), 0.08) 0%, rgba(var(--primary-rgb), 0) 60%), var(--background);
             -webkit-font-smoothing: antialiased;
         }
 
@@ -58,14 +60,14 @@
 
         /* Header */
         header {
-            background: rgba(255, 255, 255, 0.92);
+            background: rgba(255, 255, 255, 0.94);
             padding: 18px 0;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+            box-shadow: 0 10px 30px rgba(17, 24, 39, 0.06);
             backdrop-filter: blur(18px);
-            border-bottom: 1px solid rgba(213, 222, 235, 0.8);
+            border-bottom: 1px solid rgba(var(--primary-rgb), 0.12);
         }
 
         nav {
@@ -96,7 +98,7 @@
             justify-content: center;
             color: white;
             font-size: 22px;
-            box-shadow: 0 8px 20px rgba(29, 78, 216, 0.25);
+            box-shadow: 0 12px 24px rgba(var(--primary-rgb), 0.24);
         }
 
         .nav-links {
@@ -119,7 +121,7 @@
         }
 
         .cta-button {
-            background: var(--primary);
+            background: linear-gradient(135deg, #FF8A1D, #FF6A00);
             color: white;
             padding: 14px 32px;
             border-radius: 28px;
@@ -132,25 +134,25 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            box-shadow: 0 18px 35px rgba(29, 78, 216, 0.25);
+            box-shadow: 0 18px 35px rgba(var(--primary-rgb), 0.28);
         }
 
         .cta-button:hover {
-            background: var(--primary-dark);
+            background: linear-gradient(135deg, #FF7710, #FF5C00);
             transform: translateY(-3px);
-            box-shadow: 0 22px 40px rgba(19, 55, 156, 0.3);
+            box-shadow: 0 22px 42px rgba(var(--primary-dark-rgb), 0.32);
         }
 
         .cta-button-secondary {
             background: transparent;
             color: var(--primary);
-            border: 1.5px solid rgba(29, 78, 216, 0.35);
+            border: 1.5px solid rgba(var(--primary-rgb), 0.35);
             box-shadow: none;
         }
 
         .cta-button-secondary:hover {
-            background: rgba(29, 78, 216, 0.08);
-            border-color: rgba(29, 78, 216, 0.5);
+            background: rgba(var(--primary-rgb), 0.08);
+            border-color: rgba(var(--primary-rgb), 0.5);
         }
 
         /* Hero Section */
@@ -158,8 +160,8 @@
             position: relative;
             padding: 140px 0 120px;
             overflow: hidden;
-            background: radial-gradient(circle at 10% 20%, rgba(29, 78, 216, 0.14), transparent 55%),
-                        radial-gradient(circle at 90% 20%, rgba(19, 55, 156, 0.12), transparent 50%),
+            background: radial-gradient(circle at 10% 20%, rgba(var(--primary-rgb), 0.12), transparent 55%),
+                        radial-gradient(circle at 90% 20%, rgba(var(--primary-dark-rgb), 0.14), transparent 50%),
                         var(--surface-alt);
         }
 
@@ -168,7 +170,7 @@
             position: absolute;
             inset: 60px 0 auto;
             height: 240px;
-            background: radial-gradient(60% 120% at 50% -10%, rgba(29, 78, 216, 0.2), transparent 70%);
+            background: radial-gradient(60% 120% at 50% -10%, rgba(var(--primary-rgb), 0.2), transparent 70%);
             opacity: 0.7;
             pointer-events: none;
         }
@@ -222,7 +224,7 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(29, 78, 216, 0.1);
+            background: rgba(var(--primary-rgb), 0.12);
             color: var(--primary);
             padding: 10px 18px;
             border-radius: 24px;
@@ -230,7 +232,7 @@
             font-weight: 600;
             letter-spacing: 0.02em;
             margin-bottom: 24px;
-            border: 1px solid rgba(29, 78, 216, 0.2);
+            border: 1px solid rgba(var(--primary-rgb), 0.25);
         }
 
         .trust-badges {
@@ -271,7 +273,7 @@
             content: "";
             position: absolute;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(29, 78, 216, 0.25), transparent 65%);
+            background: radial-gradient(circle, rgba(var(--primary-rgb), 0.25), transparent 65%);
             z-index: 0;
         }
 
@@ -300,18 +302,18 @@
             background: var(--surface);
             padding: 24px;
             border-radius: 20px;
-            box-shadow: 0 25px 55px rgba(15, 23, 42, 0.16);
-            border: 1px solid rgba(213, 222, 235, 0.7);
+            box-shadow: 0 25px 55px rgba(17, 24, 39, 0.14);
+            border: 1px solid rgba(var(--primary-rgb), 0.18);
             min-width: 260px;
         }
 
         .hero-screen.accent {
-            background: linear-gradient(160deg, rgba(29, 78, 216, 0.1), rgba(29, 78, 216, 0));
-            border-color: rgba(29, 78, 216, 0.2);
+            background: linear-gradient(160deg, rgba(var(--primary-rgb), 0.12), rgba(var(--primary-rgb), 0));
+            border-color: rgba(var(--primary-rgb), 0.25);
         }
 
         .hero-screen.accent .hero-list li span {
-            background: rgba(29, 78, 216, 0.18);
+            background: rgba(var(--primary-rgb), 0.18);
             color: var(--primary-dark);
         }
 
@@ -342,7 +344,7 @@
             width: 28px;
             height: 28px;
             border-radius: 12px;
-            background: rgba(29, 78, 216, 0.12);
+            background: rgba(var(--primary-rgb), 0.14);
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -387,20 +389,20 @@
             background: var(--surface);
             padding: 36px;
             border-radius: 20px;
-            box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
+            box-shadow: 0 20px 45px rgba(17, 24, 39, 0.08);
             transition: transform 0.35s ease, box-shadow 0.35s ease;
-            border: 1px solid rgba(213, 222, 235, 0.7);
+            border: 1px solid rgba(var(--primary-rgb), 0.15);
         }
 
         .feature-card:hover {
             transform: translateY(-12px);
-            box-shadow: 0 30px 60px rgba(15, 23, 42, 0.12);
+            box-shadow: 0 30px 60px rgba(17, 24, 39, 0.12);
         }
 
         .feature-icon {
             width: 60px;
             height: 60px;
-            background: linear-gradient(135deg, rgba(29, 78, 216, 0.12), rgba(29, 78, 216, 0.02));
+            background: linear-gradient(135deg, rgba(var(--primary-rgb), 0.14), rgba(var(--primary-rgb), 0.04));
             border-radius: 16px;
             display: flex;
             align-items: center;
@@ -437,8 +439,8 @@
             background: var(--surface);
             padding: 36px 32px;
             border-radius: 20px;
-            box-shadow: 0 24px 50px rgba(15, 23, 42, 0.08);
-            border: 1px solid rgba(213, 222, 235, 0.6);
+            box-shadow: 0 24px 50px rgba(17, 24, 39, 0.08);
+            border: 1px solid rgba(var(--primary-rgb), 0.18);
         }
 
         .step-number {
@@ -453,7 +455,7 @@
             font-size: 20px;
             font-weight: 700;
             margin-bottom: 24px;
-            box-shadow: 0 12px 24px rgba(29, 78, 216, 0.25);
+            box-shadow: 0 12px 24px rgba(var(--primary-rgb), 0.28);
         }
 
         .step h3 {
@@ -467,10 +469,231 @@
             line-height: 1.7;
         }
 
+        /* Booking Section */
+        .booking {
+            padding: 110px 0;
+            background: linear-gradient(180deg, rgba(255, 244, 230, 0.6) 0%, rgba(255, 248, 241, 0.95) 100%);
+        }
+
+        .booking-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 60px;
+            align-items: stretch;
+        }
+
+        .booking-copy {
+            display: grid;
+            gap: 24px;
+        }
+
+        .booking-copy h2 {
+            font-size: clamp(2.2rem, 3vw, 2.8rem);
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+        }
+
+        .booking-copy p {
+            font-size: 18px;
+            color: var(--text-secondary);
+        }
+
+        .booking-highlights {
+            list-style: none;
+            display: grid;
+            gap: 16px;
+        }
+
+        .booking-highlights li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--text-secondary);
+        }
+
+        .booking-highlights li span {
+            width: 36px;
+            height: 36px;
+            border-radius: 14px;
+            background: rgba(var(--primary-rgb), 0.14);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: var(--primary);
+        }
+
+        .booking-contact {
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+
+        .booking-contact a {
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .booking-contact a:hover {
+            text-decoration: underline;
+        }
+
+        .booking-card {
+            background: var(--surface);
+            border-radius: 28px;
+            padding: 36px;
+            border: 1px solid rgba(var(--primary-rgb), 0.22);
+            box-shadow: 0 35px 80px rgba(17, 24, 39, 0.12);
+            display: grid;
+            gap: 28px;
+        }
+
+        .calendar-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .calendar-month {
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .calendar-nav {
+            width: 38px;
+            height: 38px;
+            border-radius: 12px;
+            border: none;
+            background: rgba(var(--primary-rgb), 0.14);
+            color: var(--primary);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .calendar-nav:hover {
+            background: rgba(var(--primary-rgb), 0.22);
+            transform: translateY(-2px);
+        }
+
+        .calendar-nav:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .calendar-day-names,
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 12px;
+        }
+
+        .calendar-day-names span {
+            text-align: center;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            letter-spacing: 0.08em;
+        }
+
+        .calendar-day {
+            border: none;
+            border-radius: 14px;
+            padding: 10px 0;
+            font-size: 15px;
+            font-weight: 600;
+            background: rgba(var(--primary-rgb), 0.08);
+            color: var(--text);
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        .calendar-day:hover:not(.disabled) {
+            background: rgba(var(--primary-rgb), 0.18);
+            transform: translateY(-2px);
+        }
+
+        .calendar-day.selected {
+            background: linear-gradient(135deg, #FF8A1D, #FF6A00);
+            color: white;
+            box-shadow: 0 12px 25px rgba(var(--primary-rgb), 0.32);
+        }
+
+        .calendar-day.disabled {
+            background: rgba(31, 41, 51, 0.06);
+            color: rgba(31, 41, 51, 0.35);
+            cursor: not-allowed;
+        }
+
+        .calendar-day.placeholder {
+            visibility: hidden;
+        }
+
+        .booking-form {
+            display: grid;
+            gap: 18px;
+        }
+
+        .booking-form-group {
+            display: grid;
+            gap: 8px;
+        }
+
+        .booking-form-group label {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .booking-form-group input,
+        .booking-form-group select,
+        .booking-form-group textarea {
+            border: 1px solid rgba(var(--primary-rgb), 0.2);
+            border-radius: 16px;
+            padding: 14px 16px;
+            font-size: 15px;
+            font-family: inherit;
+            transition: border 0.3s ease, box-shadow 0.3s ease;
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .booking-form-group textarea {
+            min-height: 90px;
+            resize: vertical;
+        }
+
+        .booking-form-group input:focus,
+        .booking-form-group select:focus,
+        .booking-form-group textarea:focus {
+            outline: none;
+            border-color: rgba(var(--primary-rgb), 0.45);
+            box-shadow: 0 0 0 4px rgba(var(--primary-rgb), 0.12);
+        }
+
+        .booking-hint {
+            font-size: 13px;
+            color: var(--text-secondary);
+            opacity: 0.8;
+        }
+
+        .booking-confirmation {
+            font-size: 14px;
+            color: var(--primary-dark);
+            font-weight: 600;
+        }
+
         /* Testimonials */
         .testimonials {
             padding: 100px 0;
-            background: linear-gradient(180deg, rgba(232, 238, 249, 0) 0%, rgba(232, 238, 249, 0.65) 100%);
+            background: linear-gradient(180deg, rgba(255, 244, 230, 0) 0%, rgba(255, 213, 179, 0.4) 100%);
         }
 
         .testimonial-grid {
@@ -484,8 +707,8 @@
             background: var(--surface);
             padding: 40px;
             border-radius: 24px;
-            box-shadow: 0 30px 70px rgba(15, 23, 42, 0.1);
-            border: 1px solid rgba(213, 222, 235, 0.6);
+            box-shadow: 0 30px 70px rgba(17, 24, 39, 0.1);
+            border: 1px solid rgba(var(--primary-rgb), 0.16);
             position: relative;
             overflow: hidden;
         }
@@ -494,7 +717,7 @@
             content: "";
             position: absolute;
             inset: 0;
-            background: radial-gradient(circle at top right, rgba(29, 78, 216, 0.08), transparent 60%);
+            background: radial-gradient(circle at top right, rgba(var(--primary-rgb), 0.12), transparent 60%);
             opacity: 0.9;
         }
 
@@ -520,7 +743,7 @@
         .author-avatar {
             width: 54px;
             height: 54px;
-            background: rgba(29, 78, 216, 0.12);
+            background: rgba(var(--primary-rgb), 0.12);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -555,24 +778,24 @@
             background: var(--surface);
             padding: 44px 40px;
             border-radius: 24px;
-            box-shadow: 0 32px 70px rgba(15, 23, 42, 0.1);
+            box-shadow: 0 32px 70px rgba(17, 24, 39, 0.1);
             position: relative;
             transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
-            border: 1px solid rgba(213, 222, 235, 0.6);
+            border: 1px solid rgba(var(--primary-rgb), 0.18);
             display: flex;
             flex-direction: column;
             gap: 24px;
         }
 
         .pricing-card.featured {
-            border-color: rgba(29, 78, 216, 0.35);
-            box-shadow: 0 40px 80px rgba(29, 78, 216, 0.2);
+            border-color: rgba(var(--primary-rgb), 0.4);
+            box-shadow: 0 40px 80px rgba(var(--primary-rgb), 0.22);
             transform: translateY(-6px);
         }
 
         .pricing-card:hover {
             transform: translateY(-12px);
-            box-shadow: 0 45px 90px rgba(15, 23, 42, 0.12);
+            box-shadow: 0 45px 90px rgba(17, 24, 39, 0.12);
         }
 
         .pricing-card h3 {
@@ -630,7 +853,7 @@
         /* CTA Section */
         .cta-section {
             padding: 96px 0;
-            background: linear-gradient(120deg, rgba(29, 78, 216, 0.95), rgba(19, 55, 156, 0.92));
+            background: linear-gradient(120deg, #FF8A1D, #FF6A00);
             color: white;
             text-align: center;
             position: relative;
@@ -734,8 +957,8 @@
             background: var(--surface);
             padding: 32px;
             border-radius: 20px;
-            box-shadow: 0 24px 55px rgba(15, 23, 42, 0.08);
-            border: 1px solid rgba(213, 222, 235, 0.6);
+            box-shadow: 0 24px 55px rgba(17, 24, 39, 0.08);
+            border: 1px solid rgba(var(--primary-rgb), 0.16);
             display: grid;
             gap: 6px;
             text-align: left;
@@ -811,6 +1034,23 @@
                 justify-content: center;
             }
 
+            .booking {
+                padding: 80px 0;
+            }
+
+            .booking-card {
+                padding: 28px;
+            }
+
+            .calendar-day-names,
+            .calendar-grid {
+                gap: 8px;
+            }
+
+            .calendar-day {
+                padding: 12px 0;
+            }
+
             .nav-links {
                 display: none;
             }
@@ -826,6 +1066,7 @@
                 <span>HazardHub</span>
             </a>
             <ul class="nav-links">
+                <li><a href="#book-demo">Book Demo</a></li>
                 <li><a href="#features">Features</a></li>
                 <li><a href="#how-it-works">How It Works</a></li>
                 <li><a href="#pricing">Pricing</a></li>
@@ -846,8 +1087,8 @@
                     <h1>Elevate workplace safety with <span>HazardHub</span></h1>
                     <p>Consolidate hazard reporting, corrective actions, and compliance insights in a single, beautifully simple platform designed for modern operations leaders.</p>
                     <div class="hero-buttons">
-                        <a href="#pricing" class="cta-button">Start Free Trial</a>
-                        <a href="#how-it-works" class="cta-button cta-button-secondary">See How It Works</a>
+                        <a href="#book-demo" class="cta-button">Book a Demo</a>
+                        <a href="#features" class="cta-button cta-button-secondary">Explore Features</a>
                     </div>
                     <div class="trust-badges">
                         <p>Trusted by teams at</p>
@@ -1005,6 +1246,79 @@
         </div>
     </section>
 
+    <!-- Booking Section -->
+    <section id="book-demo" class="booking">
+        <div class="container">
+            <div class="booking-grid">
+                <div class="booking-copy">
+                    <div class="badge">📅 Book a live demo</div>
+                    <h2>Experience HazardHub with a personalized walkthrough</h2>
+                    <p>Pick a time that works for your team and we'll guide you through our OSHA-ready hazard workflows, orange-first UI, and real-time reporting tools.</p>
+                    <ul class="booking-highlights">
+                        <li><span>⚡</span> 30-minute session tailored to your industry</li>
+                        <li><span>🧡</span> See the refreshed orange interface across mobile & web</li>
+                        <li><span>🤝</span> Live Q&amp;A with a HazardHub specialist</li>
+                    </ul>
+                    <p class="booking-contact">Prefer email? Reach us anytime at <a href="mailto:ajayi.m@outlook.com">ajayi.m@outlook.com</a>.</p>
+                </div>
+                <div class="booking-card">
+                    <div class="calendar-header">
+                        <button class="calendar-nav" id="calendar-prev" type="button" aria-label="Previous month">&#8592;</button>
+                        <div class="calendar-month" id="calendar-month-label">Month Year</div>
+                        <button class="calendar-nav" id="calendar-next" type="button" aria-label="Next month">&#8594;</button>
+                    </div>
+                    <div class="calendar-day-names" aria-hidden="true">
+                        <span>Sun</span>
+                        <span>Mon</span>
+                        <span>Tue</span>
+                        <span>Wed</span>
+                        <span>Thu</span>
+                        <span>Fri</span>
+                        <span>Sat</span>
+                    </div>
+                    <div class="calendar-grid" id="booking-calendar-grid" role="grid" aria-labelledby="calendar-month-label"></div>
+                    <form id="booking-form" class="booking-form">
+                        <div class="booking-form-group">
+                            <label for="booking-date-display">Selected date</label>
+                            <input type="text" id="booking-date-display" name="dateDisplay" placeholder="Select a date" readonly>
+                            <input type="hidden" id="booking-date" name="date">
+                        </div>
+                        <div class="booking-form-group">
+                            <label for="booking-time">Preferred time</label>
+                            <select id="booking-time" name="time" required>
+                                <option value="" disabled selected hidden>Select a time</option>
+                                <option value="09:00 AM">09:00 AM</option>
+                                <option value="10:30 AM">10:30 AM</option>
+                                <option value="12:00 PM">12:00 PM</option>
+                                <option value="01:30 PM">01:30 PM</option>
+                                <option value="03:00 PM">03:00 PM</option>
+                            </select>
+                        </div>
+                        <div class="booking-form-group">
+                            <label for="booking-name">Full name</label>
+                            <input type="text" id="booking-name" name="name" placeholder="Your name" required>
+                        </div>
+                        <div class="booking-form-group">
+                            <label for="booking-company">Company</label>
+                            <input type="text" id="booking-company" name="company" placeholder="Company or team">
+                        </div>
+                        <div class="booking-form-group">
+                            <label for="booking-email">Work email</label>
+                            <input type="email" id="booking-email" name="email" placeholder="you@company.com" required>
+                            <p class="booking-hint">We'll send a confirmation with calendar invite details.</p>
+                        </div>
+                        <div class="booking-form-group">
+                            <label for="booking-notes">Notes (optional)</label>
+                            <textarea id="booking-notes" name="notes" placeholder="Let us know what you'd like to cover"></textarea>
+                        </div>
+                        <button type="submit" class="cta-button">Schedule my demo</button>
+                        <div class="booking-confirmation" id="booking-confirmation" role="status" aria-live="polite"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Testimonials -->
     <section id="testimonials" class="testimonials">
         <div class="container">
@@ -1124,6 +1438,7 @@
                     <h4>Product</h4>
                     <ul>
                         <li><a href="#features">Features</a></li>
+                        <li><a href="#book-demo">Book Demo</a></li>
                         <li><a href="#pricing">Pricing</a></li>
                         <li><a href="#how-it-works">How It Works</a></li>
                         <li><a href="#">Download iOS App</a></li>
@@ -1165,6 +1480,156 @@
             </div>
         </div>
     </footer>
+    <script>
+        (function () {
+            const calendarMonthLabel = document.getElementById('calendar-month-label');
+            const calendarGrid = document.getElementById('booking-calendar-grid');
+            const prevButton = document.getElementById('calendar-prev');
+            const nextButton = document.getElementById('calendar-next');
+            const bookingDateDisplay = document.getElementById('booking-date-display');
+            const bookingDateHidden = document.getElementById('booking-date');
+            const form = document.getElementById('booking-form');
+            const timeSelect = document.getElementById('booking-time');
+            const confirmation = document.getElementById('booking-confirmation');
+            const nameInput = document.getElementById('booking-name');
+            const companyInput = document.getElementById('booking-company');
+            const emailInput = document.getElementById('booking-email');
+            const notesInput = document.getElementById('booking-notes');
+
+            if (!calendarMonthLabel || !calendarGrid || !form || !prevButton || !nextButton) {
+                return;
+            }
+
+            const monthNames = [
+                'January', 'February', 'March', 'April', 'May', 'June',
+                'July', 'August', 'September', 'October', 'November', 'December'
+            ];
+
+            const today = new Date();
+            const startOfToday = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+            let currentMonth = new Date(today.getFullYear(), today.getMonth(), 1);
+            let selectedDate = null;
+
+            function formatDisplayDate(date) {
+                return date.toLocaleDateString(undefined, {
+                    weekday: 'long',
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+            }
+
+            function datesAreEqual(a, b) {
+                return a && b && a.getFullYear() === b.getFullYear() && a.getMonth() === b.getMonth() && a.getDate() === b.getDate();
+            }
+
+            function renderCalendar() {
+                const year = currentMonth.getFullYear();
+                const month = currentMonth.getMonth();
+                calendarMonthLabel.textContent = `${monthNames[month]} ${year}`;
+
+                calendarGrid.innerHTML = '';
+                const firstDay = new Date(year, month, 1).getDay();
+                const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+                for (let i = 0; i < firstDay; i++) {
+                    const placeholder = document.createElement('div');
+                    placeholder.className = 'calendar-day placeholder';
+                    placeholder.setAttribute('aria-hidden', 'true');
+                    calendarGrid.appendChild(placeholder);
+                }
+
+                for (let day = 1; day <= daysInMonth; day++) {
+                    const date = new Date(year, month, day);
+                    const dayButton = document.createElement('button');
+                    dayButton.type = 'button';
+                    dayButton.className = 'calendar-day';
+                    dayButton.textContent = day;
+                    dayButton.setAttribute('role', 'gridcell');
+                    dayButton.setAttribute('aria-label', formatDisplayDate(date));
+
+                    if (date < startOfToday) {
+                        dayButton.classList.add('disabled');
+                        dayButton.disabled = true;
+                        dayButton.setAttribute('aria-disabled', 'true');
+                    }
+
+                    if (selectedDate && datesAreEqual(date, selectedDate)) {
+                        dayButton.classList.add('selected');
+                    }
+
+                    dayButton.addEventListener('click', function () {
+                        selectedDate = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+                        bookingDateHidden.value = selectedDate.toISOString();
+                        bookingDateDisplay.value = formatDisplayDate(selectedDate);
+                        confirmation.textContent = `Great, we'll pencil in ${formatDisplayDate(selectedDate)}.`;
+                        renderCalendar();
+                    });
+
+                    calendarGrid.appendChild(dayButton);
+                }
+
+                const isCurrentMonth = currentMonth.getFullYear() === startOfToday.getFullYear() && currentMonth.getMonth() === startOfToday.getMonth();
+                prevButton.disabled = isCurrentMonth;
+            }
+
+            prevButton.addEventListener('click', function () {
+                currentMonth = new Date(currentMonth.getFullYear(), currentMonth.getMonth() - 1, 1);
+                renderCalendar();
+            });
+
+            nextButton.addEventListener('click', function () {
+                currentMonth = new Date(currentMonth.getFullYear(), currentMonth.getMonth() + 1, 1);
+                renderCalendar();
+            });
+
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+                confirmation.textContent = '';
+
+                if (!form.checkValidity()) {
+                    form.reportValidity();
+                    return;
+                }
+
+                if (!selectedDate) {
+                    confirmation.textContent = 'Please select a date from the calendar before requesting your demo.';
+                    return;
+                }
+
+                const formattedDate = formatDisplayDate(selectedDate);
+                const selectedTime = timeSelect.value;
+                const nameValue = nameInput.value.trim();
+                const companyValue = companyInput.value.trim();
+                const emailValue = emailInput.value.trim();
+                const notesValue = notesInput.value.trim();
+
+                const subject = encodeURIComponent(`HazardHub demo request - ${formattedDate}`);
+                const details = [
+                    `Name: ${nameValue || 'N/A'}`,
+                    `Company: ${companyValue || 'N/A'}`,
+                    `Work email: ${emailValue || 'N/A'}`,
+                    `Preferred time: ${selectedTime}`,
+                    `Date: ${formattedDate}`,
+                    `Notes: ${notesValue || 'None'}`
+                ].join('\n');
+
+                const body = encodeURIComponent(`Hi HazardHub team,\n\nI'd like to schedule a live demo of HazardHub. Here are my details:\n\n${details}\n\nThank you!`);
+
+                confirmation.textContent = 'Great choice! Your email client will open with the demo request—send it when you\'re ready.';
+
+                form.reset();
+                selectedDate = null;
+                bookingDateHidden.value = '';
+                bookingDateDisplay.value = '';
+                renderCalendar();
+
+                window.location.href = `mailto:ajayi.m@outlook.com?subject=${subject}&body=${body}`;
+            });
+
+            renderCalendar();
+        })();
+    </script>
 </body>
 </html>
 
