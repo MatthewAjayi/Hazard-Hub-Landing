@@ -160,6 +160,22 @@
             border-color: rgba(var(--primary-rgb), 0.5);
         }
 
+        .icon {
+            width: 100%;
+            height: 100%;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            vector-effect: non-scaling-stroke;
+        }
+
+        .icon-accent {
+            fill: rgba(var(--primary-rgb), 0.16);
+            stroke: none;
+        }
+
         /* Hero Section */
         .hero {
             position: relative;
@@ -238,6 +254,19 @@
             letter-spacing: 0.02em;
             margin-bottom: 24px;
             border: 1px solid rgba(var(--primary-rgb), 0.25);
+        }
+
+        .badge-icon {
+            width: 26px;
+            height: 26px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .badge-icon svg {
+            width: 22px;
+            height: 22px;
         }
 
         .trust-badges {
@@ -412,8 +441,13 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 28px;
+            color: var(--primary);
             margin-bottom: 24px;
+        }
+
+        .feature-icon svg {
+            width: 32px;
+            height: 32px;
         }
 
         .feature-card h3 {
@@ -516,7 +550,7 @@
             color: var(--text-secondary);
         }
 
-        .booking-highlights li span {
+        .booking-highlights li .list-icon {
             width: 36px;
             height: 36px;
             border-radius: 14px;
@@ -524,8 +558,12 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            font-size: 18px;
             color: var(--primary);
+        }
+
+        .list-icon svg {
+            width: 20px;
+            height: 20px;
         }
 
         .booking-contact {
@@ -1151,55 +1189,115 @@
             
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feature-icon">📸</div>
+                    <div class="feature-icon" aria-hidden="true">
+                        <svg class="icon icon-camera" viewBox="0 0 24 24">
+                            <rect x="3.5" y="7" width="17" height="12" rx="3" ry="3" fill="none"></rect>
+                            <path d="M8.5 7l1.2-2h4.6l1.2 2" fill="none"></path>
+                            <circle cx="12" cy="13" r="3.2" fill="none"></circle>
+                            <circle class="icon-accent" cx="17.2" cy="9.2" r="1.1"></circle>
+                        </svg>
+                    </div>
                     <h3>Instant Hazard Reporting</h3>
                     <p>Take a photo, add notes, select severity, and submit - all in under 2 minutes. GPS location automatically captured for precise tracking.</p>
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-icon">👥</div>
+                    <div class="feature-icon" aria-hidden="true">
+                        <svg class="icon icon-team" viewBox="0 0 24 24">
+                            <circle cx="8" cy="9" r="3" fill="none"></circle>
+                            <path d="M3.5 18.5v-.7a4.5 4.5 0 0 1 9 0v.7" fill="none"></path>
+                            <circle cx="16.5" cy="11" r="2.5" fill="none"></circle>
+                            <path d="M13.5 18.5v-.7a3.5 3.5 0 0 1 7 0v.7" fill="none"></path>
+                        </svg>
+                    </div>
                     <h3>Smart Assignment System</h3>
                     <p>Supervisors can assign hazards to maintenance teams instantly. Real-time notifications ensure everyone stays informed.</p>
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-icon">📊</div>
+                    <div class="feature-icon" aria-hidden="true">
+                        <svg class="icon icon-chart" viewBox="0 0 24 24">
+                            <path d="M4 19h16" fill="none"></path>
+                            <path d="M7 19v-5.5" fill="none"></path>
+                            <path d="M12 19V6" fill="none"></path>
+                            <path d="M17 19v-8" fill="none"></path>
+                            <circle class="icon-accent" cx="7" cy="13.5" r="1.1"></circle>
+                            <circle class="icon-accent" cx="12" cy="8" r="1.1"></circle>
+                            <circle class="icon-accent" cx="17" cy="11" r="1.1"></circle>
+                        </svg>
+                    </div>
                     <h3>Real-Time Status Tracking</h3>
                     <p>Track hazards from report to resolution. Open → Assigned → Fixed → Verified → Closed. Full visibility at every step.</p>
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-icon">🔔</div>
+                    <div class="feature-icon" aria-hidden="true">
+                        <svg class="icon icon-bell" viewBox="0 0 24 24">
+                            <path d="M18 16v-4.5a6 6 0 0 0-12 0V16" fill="none"></path>
+                            <path d="M6 16h12" fill="none"></path>
+                            <path d="M10 19a2 2 0 0 0 4 0" fill="none"></path>
+                        </svg>
+                    </div>
                     <h3>Push Notifications</h3>
                     <p>Get instant alerts when hazards are assigned, updated, or closed. Tap notifications to jump directly to hazard details.</p>
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-icon">📄</div>
+                    <div class="feature-icon" aria-hidden="true">
+                        <svg class="icon icon-document" viewBox="0 0 24 24">
+                            <path d="M8 4h6l4 4v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" fill="none"></path>
+                            <path d="M14 4v4h4" fill="none"></path>
+                            <path d="M9 12h6" fill="none"></path>
+                            <path d="M9 15h6" fill="none"></path>
+                        </svg>
+                    </div>
                     <h3>Automated PDF Reports</h3>
                     <p>Generate professional PDF reports for any hazard. Weekly summary reports automatically created every Monday.</p>
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-icon">🔐</div>
+                    <div class="feature-icon" aria-hidden="true">
+                        <svg class="icon icon-shield" viewBox="0 0 24 24">
+                            <path d="M12 4l6 2v6.5a6 6 0 0 1-6 6 6 6 0 0 1-6-6V6z" fill="none"></path>
+                            <path d="M12 10.5a2.5 2.5 0 0 1 2.5 2.5v1a2.5 2.5 0 1 1-5 0v-1a2.5 2.5 0 0 1 2.5-2.5z" fill="none"></path>
+                            <path d="M12 16v1.8" fill="none"></path>
+                        </svg>
+                    </div>
                     <h3>Role-Based Access Control</h3>
                     <p>Supervisors, maintenance, workers, and safety leads - each role has appropriate permissions and access levels.</p>
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-icon">📷</div>
+                    <div class="feature-icon" aria-hidden="true">
+                        <svg class="icon icon-gallery" viewBox="0 0 24 24">
+                            <rect x="4" y="6" width="16" height="12" rx="2" ry="2" fill="none"></rect>
+                            <path d="M8.5 13l3 3.8 2.2-2.8 3.3 4" fill="none"></path>
+                            <circle cx="9" cy="10" r="1.5" fill="none"></circle>
+                        </svg>
+                    </div>
                     <h3>Photo Documentation</h3>
                     <p>Attach multiple photos to each hazard. Before and after photos for complete documentation. View in full-screen gallery.</p>
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-icon">🌙</div>
+                    <div class="feature-icon" aria-hidden="true">
+                        <svg class="icon icon-moon" viewBox="0 0 24 24">
+                            <path d="M15.5 4.5a7 7 0 1 1-6 12 6.3 6.3 0 0 0 7.5-7.5z" fill="none"></path>
+                        </svg>
+                    </div>
                     <h3>Dark Mode Support</h3>
                     <p>Automatic light and dark themes for comfortable viewing in any environment. Fully accessible design.</p>
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-icon">🔍</div>
+                    <div class="feature-icon" aria-hidden="true">
+                        <svg class="icon icon-search" viewBox="0 0 24 24">
+                            <circle cx="10.5" cy="10.5" r="4.5" fill="none"></circle>
+                            <path d="M14.5 14.5L20 20" fill="none"></path>
+                            <path d="M8 6V4.5" fill="none"></path>
+                            <path d="M13 16.5V18" fill="none"></path>
+                        </svg>
+                    </div>
                     <h3>Advanced Search & Filters</h3>
                     <p>Find hazards quickly with search and filters. Filter by status, severity, or assigned to you. Badge counts for active assignments.</p>
                 </div>
@@ -1246,13 +1344,50 @@
         <div class="container">
             <div class="booking-grid">
                 <div class="booking-copy">
-                    <div class="badge">📅 Book a live demo</div>
+                    <div class="badge">
+                        <span class="badge-icon" aria-hidden="true">
+                            <svg class="icon icon-calendar" viewBox="0 0 24 24">
+                                <rect x="3" y="5" width="18" height="16" rx="2" ry="2" fill="none"></rect>
+                                <path d="M7 3v4" fill="none"></path>
+                                <path d="M17 3v4" fill="none"></path>
+                                <path d="M3 10h18" fill="none"></path>
+                                <path d="M8 14h2" fill="none"></path>
+                                <path d="M12 14h2" fill="none"></path>
+                                <path d="M16 14h2" fill="none"></path>
+                            </svg>
+                        </span>
+                        Book a live demo
+                    </div>
                     <h2>Experience Hazard Hub with a personalized walkthrough</h2>
                     <p>Pick a time that works for your team and we'll guide you through our OSHA-ready hazard workflows, orange-first UI, and real-time reporting tools.</p>
                     <ul class="booking-highlights">
-                        <li><span>⚡</span> 30-minute session tailored to your industry</li>
-                        <li><span>🧡</span> See the refreshed orange interface across mobile & web</li>
-                        <li><span>🤝</span> Live Q&amp;A with a Hazard Hub specialist</li>
+                        <li>
+                            <span class="list-icon" aria-hidden="true">
+                                <svg class="icon icon-bolt" viewBox="0 0 24 24">
+                                    <path d="M11 3L5 13h5l-1 8 6-10h-5l1-8z" fill="none"></path>
+                                </svg>
+                            </span>
+                            30-minute session tailored to your industry
+                        </li>
+                        <li>
+                            <span class="list-icon" aria-hidden="true">
+                                <svg class="icon icon-heart" viewBox="0 0 24 24">
+                                    <path d="M12 19l-6.2-6.2a3.5 3.5 0 0 1 5-5L12 9l1.2-1.2a3.5 3.5 0 0 1 5 5z" fill="none"></path>
+                                </svg>
+                            </span>
+                            See the refreshed orange interface across mobile &amp; web
+                        </li>
+                        <li>
+                            <span class="list-icon" aria-hidden="true">
+                                <svg class="icon icon-handshake" viewBox="0 0 24 24">
+                                    <path d="M4 10l5.2 5.2a2 2 0 0 0 2.8 0L17 10" fill="none"></path>
+                                    <path d="M3 9l4 4" fill="none"></path>
+                                    <path d="M21 9l-4 4" fill="none"></path>
+                                    <path d="M9.5 7.5l2.5 2.5 2.5-2.5" fill="none"></path>
+                                </svg>
+                            </span>
+                            Live Q&amp;A with a Hazard Hub specialist
+                        </li>
                     </ul>
                     <p class="booking-contact">Prefer email? Reach us anytime at <a href="mailto:ajayi.m@outlook.com">ajayi.m@outlook.com</a>.</p>
                 </div>
