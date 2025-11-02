@@ -91,14 +91,19 @@
         .logo-icon {
             width: 42px;
             height: 42px;
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-size: 22px;
+            overflow: hidden;
             box-shadow: 0 12px 24px rgba(var(--primary-rgb), 0.24);
+            background: radial-gradient(circle at 50% 50%, rgba(var(--primary-rgb), 0.35), rgba(var(--primary-rgb), 0.05) 60%, transparent 100%);
+        }
+
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            display: block;
         }
 
         .nav-links {
@@ -1062,7 +1067,9 @@
     <header>
         <nav class="container">
             <a href="#" class="logo">
-                <div class="logo-icon">⚠️</div>
+                <div class="logo-icon">
+                    <img src="assets/hazardhub-logo.svg" alt="Hazard Hub logo">
+                </div>
                 <span>Hazard Hub</span>
             </a>
             <ul class="nav-links">
@@ -1081,23 +1088,11 @@
         <div class="container">
             <div class="hero-layout">
                 <div class="hero-copy">
-                    <div class="badge">
-                        ⭐ Trusted by safety teams worldwide
-                    </div>
                     <h1>Elevate workplace safety with <span>Hazard Hub</span></h1>
                     <p>Consolidate hazard reporting, corrective actions, and compliance insights in a single, beautifully simple platform designed for modern operations leaders.</p>
                     <div class="hero-buttons">
                         <a href="#book-demo" class="cta-button">Book a Demo</a>
                         <a href="#features" class="cta-button cta-button-secondary">Explore Features</a>
-                    </div>
-                    <div class="trust-badges">
-                        <p>Trusted by teams at</p>
-                        <div class="trust-logos">
-                            <span class="trust-logo">Northwind Builders</span>
-                            <span class="trust-logo">Apex Manufacturing</span>
-                            <span class="trust-logo">Velocity Logistics</span>
-                            <span class="trust-logo">Summit Energy</span>
-                        </div>
                     </div>
                 </div>
                 <div class="hero-media">
